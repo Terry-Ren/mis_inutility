@@ -1,6 +1,10 @@
 <template>
-<div>
-<pano title="" width="720" height="580" debug bundle="static/pantry/" format="jpg"></pano>
+<div class=container>
+    <div class="title">
+        <h1>吾爱吾理</h1>
+        <h2>交互式校园全景地图</h2>
+    </div>
+<pano title="" width="800" height="580" debug bundle="static/pantry/" format="jpg"></pano>
 <div id="fontdiv" class="fontdiv"></div>
     <div class="pushtext">  
         <textarea id="message" maxlength="15" ></textarea>  
@@ -16,4 +20,16 @@ export default {
   components: { Pano }
 };
 </script>
+<style scoped lang="scss">
+.container{
+    padding: 0 300px;
+    position: relative;
+    .title{
+        position: absolute;
+        left: 2vw;
+
+    }
+}
+</style>
+
 
