@@ -7,8 +7,40 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>mis_inutility</title>
+    <script src="/static/js/m-share.js"></script>
   </head>
   <body>
     <div id="app" v-model = "word"></div>
+    <div class="m-share"></div>
+    <!-- built files will be auto injected -->
+    <script>
+      var t = document.getElementById("fontdiv");
+      t.onmouseover=function(){
+        t.style.visibility='hidden';
+        setTimeout("t.style.visibility='visible';",1000);
+      }
+    </script>
+    <script>
+      var config = {
+          title: '武汉理工大学全景校园', // 标题，默认读取document.title
+          desc: '畅游理工大', // 描述, 默认读取head标签：<meta name="description" content="desc" />
+          link: 'http://www.baidu.com', // 网址，默认使用window.location.href
+          imgUrl: 'https://bpic.588ku.com/original_origin_min_pic/18/03/26/6c2e61feeca7fd2b446cf629d5bfa39e.jpg!r650', // 图片, 默认取网页中第一个img标签
+          types: ['wx', 'wxline', 'qq', 'qzone', 'sina'], // 开启的分享图标, 默认为全部
+          infoMap: {
+              wx: {
+                  title: '武汉理工大学全景校园微信分享',
+                  desc: '畅游理工大',
+                  link: 'http://www.baidu.com',
+                  imgUrl: 'https://bpic.588ku.com/original_origin_min_pic/18/03/26/6c2e61feeca7fd2b446cf629d5bfa39e.jpg!r650'
+              }
+          },
+          fnDoShare(type) {
+              console.log(1);
+          }
+      };
+      // 基础配置
+      Mshare.init(config);
+  </script> 
   </body>
 </html>
